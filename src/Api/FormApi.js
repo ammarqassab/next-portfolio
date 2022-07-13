@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const appName= 'Larect';
-export const apiurl= 'https://shopingammar.c1.biz/api';
+export const apiurl= 'http://shopingammar.c1.biz/api';
 export const timeOut= 30000;
 
 // axios.defaults.baseURL = 'http://shopingammar.c1.biz/api'
