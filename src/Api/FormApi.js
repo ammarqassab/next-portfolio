@@ -4,6 +4,9 @@ export const appName= 'Larect';
 export const apiurl= 'http://shopingammar.c1.biz/api';
 export const timeOut= 30000;
 
+axios.defaults.headers['Access-Control-Allow-Origin']='*'
+axios.defaults.headers['Access-Control-Allow-Methods']='GET, PUT, POST, DELETE, OPTIONS'
+axios.defaults.headers['Access-Control-Allow-Headers']='Access-Control-Allow-Headers: Content-Type, X-Auth-Token, Origin, Authorization'
 // axios.defaults.baseURL = 'http://shopingammar.c1.biz/api'
 // axios.defaults.headers.common['Authorization'] = 'Bearer ' + ACCESS_TOKEN
 // axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
