@@ -6,7 +6,7 @@ export const timeOut= 30000;
 
 // axios.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
 // axios.defaults.headers.post['X-Requested-With'] = 'XMLHttpRequest';
-axios.defaults.headers['Access-Control-Allow-Origin']='true'
+// axios.defaults.headers['Access-Control-Allow-Origin']='*'
 // axios.defaults.headers['Access-Control-Request']='*'
 // axios.defaults.headers['Access-Control-Allow-Methods']='GET, PUT, POST, DELETE, OPTIONS'
 // axios.defaults.headers['Access-Control-Allow-Headers']='Access-Control-Allow-Headers: Content-Type, X-Auth-Token, Origin, Authorization, X-Requested-With'
@@ -61,6 +61,7 @@ export const loginuserApi = (values) => {
         timeout:timeOut,
         headers:{
             'Accept': 'application/json',
+            'Access-Control-Allow-Origin': true,
         }
 
     });
