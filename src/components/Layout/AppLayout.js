@@ -90,11 +90,11 @@ const AppLayout = ({ children }) => {
     return (
         <div className=' display-container bgc-1 height-100vh'>
             <Head>
-                <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests"></meta>
+                <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
                 <meta charSet="utf-8" />
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-                <meta name="application-name" content={`${appName}`}></meta>
-                <meta name="theme-color" content="#39c7da"></meta>
+                <meta name="application-name" content={`${appName}`} />
+                <meta name="theme-color" content="#39c7da" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Header/>
