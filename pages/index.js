@@ -40,7 +40,7 @@ const Home = () => {
             <Head>
                 <meta name="keywords" content={`${appName}, App, Programming`}></meta>
                 <meta name="description" content={`${appName} : We are a company interested in programming and developing website and mobile applications`} />
-                <title>Home - {appName}</title>
+                <title>{appName}</title>
             </Head>
 
             <header>

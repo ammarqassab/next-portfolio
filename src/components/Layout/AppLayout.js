@@ -94,7 +94,7 @@ const AppLayout = ({ children }) => {
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                 <meta name="application-name" content={`${appName}`}></meta>
                 <meta name="theme-color" content="#39c7da"></meta>
-                <link rel="icon" href="/larcet/favicon.ico" />
+                <link rel="icon" href="/favicon.ico" />
             </Head>
             <Header/>
             <Upscroll/>
