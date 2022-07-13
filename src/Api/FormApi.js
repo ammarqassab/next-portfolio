@@ -4,13 +4,13 @@ export const appName= 'Larect';
 export const apiurl= 'http://shopingammar.c1.biz/api';
 export const timeOut= 30000;
 
-axios.defaults.baseURL = 'http://shopingammar.c1.biz/api'
+// axios.defaults.baseURL = 'http://shopingammar.c1.biz/api'
 // axios.defaults.headers.common['Authorization'] = 'Bearer ' + ACCESS_TOKEN
 // axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-axios.defaults.headers['content-type']='application/json'
-axios.defaults.headers['withCredentials']=true
-axios.defaults.headers['crossorigin']=true
-
+// axios.defaults.headers['content-type']='application/json'
+// axios.defaults.headers['withCredentials']=true
+// axios.defaults.headers['crossorigin']=true
+axios.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
 //touch .nojekyll
 
 //https://larect.000webhostapp.com/
