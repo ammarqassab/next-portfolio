@@ -5,8 +5,8 @@ const nextConfig = {
     loader: 'imgix',
     path: 'http://shopingammar.c1.biz/api',
   },
-  basePath:'/larect',
-  assentPrefix:'/larect'
+  // basePath:'/larect',
+  // assentPrefix:'/larect'
 }
 
 module.exports = nextConfig
