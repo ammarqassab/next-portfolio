@@ -63,7 +63,10 @@ export const loginuserApi = (values) => {
             'Accept': 'application/json',
             'Access-Control-Allow-Origin': '*',
             'Access-Control-Allow-Credentials': true,
-            "Access-Control-Allow-Methods" : "POST"
+            "Access-Control-Allow-Methods" : "POST",
+            'Cache-Control':'no-cache, private',
+            'Transfer-Encoding':'chunked',
+            
         }
 
     });
