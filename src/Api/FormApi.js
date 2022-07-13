@@ -63,6 +63,7 @@ export const loginuserApi = (values) => {
         timeout:timeOut,
         headers:{
             'Accept': 'application/json',
+            "Access-Control-Allow-Origin": "http://shopingammar.c1.biz/api/login",
         }
 
     });
