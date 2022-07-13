@@ -4,18 +4,18 @@ export const appName= 'Larect';
 export const apiurl= 'http://shopingammar.c1.biz/api';
 export const timeOut= 30000;
 
-axios.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
-axios.defaults.headers.post['X-Requested-With'] = 'XMLHttpRequest';
+// axios.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
+// axios.defaults.headers.post['X-Requested-With'] = 'XMLHttpRequest';
 axios.defaults.headers['Access-Control-Allow-Origin']='*'
 axios.defaults.headers['Access-Control-Request']='*'
 axios.defaults.headers['Access-Control-Allow-Methods']='GET, PUT, POST, DELETE, OPTIONS'
 axios.defaults.headers['Access-Control-Allow-Headers']='Access-Control-Allow-Headers: Content-Type, X-Auth-Token, Origin, Authorization, X-Requested-With'
 // axios.defaults.baseURL = 'http://shopingammar.c1.biz/api'
-// axios.defaults.headers.common['Authorization'] = 'Bearer ' + ACCESS_TOKEN
+axios.defaults.headers.common['Authorization'] = 'Bearer '
 // axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 // axios.defaults.headers['content-type']='application/json'
-// axios.defaults.headers['withCredentials']=true
-// axios.defaults.headers['crossorigin']=true
+axios.defaults.headers['withCredentials']=true
+axios.defaults.headers['crossorigin']=true
 // axios.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
 //touch .nojekyll
 
