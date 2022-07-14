@@ -93,8 +93,7 @@ export const Middleware = (token) => {
         timeout:timeOut,
         headers:{
             'Accept': 'application/json',
-            Authorization:`Bearer ${token}`,
-            "Access-Control-Allow-Origin": "*",
+            Authorization:`Basic ${token}`,
             withCredentials: true,
         }
 
