@@ -92,8 +92,9 @@ export const Middleware = (token) => {
         baseURL:apiurl,
         timeout:timeOut,
         headers:{
-            'Accept': 'application/json',
+            'Accept': 'application/json; charset=UTF-8',
             'Authorization':`Bearer ${token}`,
+            'Cache-Control':'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0'
         }
 
     });
