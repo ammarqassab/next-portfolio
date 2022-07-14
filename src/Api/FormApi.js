@@ -95,6 +95,7 @@ export const Middleware = (token) => {
             'Accept': 'application/json',
             Authorization:`Bearer ${token}`,
             "Access-Control-Allow-Origin": "*",
+            withCredentials: true,
         }
 
     });
