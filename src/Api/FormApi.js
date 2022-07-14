@@ -1,6 +1,6 @@
-import axios from "axios";
+// import axios from "axios";
 
-// const axios = require('axios');
+const axios = require('axios').default;
 
 export const appName= 'Larect';
 export const apiurl= 'https://larect.000webhostapp.com/api';
