@@ -1,16 +1,12 @@
 import axios from "axios";
 import { apiurl, timeOut } from "./FormApi";
 
-axios.defaults.headers['Access-Control-Allow-Origin']='*'
-axios.defaults.headers['Access-Control-Request']='*'
-axios.defaults.headers['Access-Control-Allow-Methods']='GET, PUT, POST, DELETE, OPTIONS'
-axios.defaults.headers['Access-Control-Allow-Headers']='Access-Control-Allow-Headers: Content-Type, X-Auth-Token, Origin, Authorization, X-Requested-With'
-
 export const allMessageApi = (token, id) => {
     const service = axios.create({
         baseURL:apiurl,
         timeout:timeOut,
         headers:{
+            'Accept': 'application/json',
             Authorization:`Bearer ${token}`
         }
     });
@@ -23,6 +19,7 @@ export const sentMessageApi = (token, values) => {
         baseURL:apiurl,
         timeout:timeOut,
         headers:{
+            'Accept': 'application/json',
             Authorization:`Bearer ${token}`
         }
 
@@ -36,6 +33,7 @@ export const markAsReadApi = (token, id) => {
         baseURL:apiurl,
         timeout:timeOut,
         headers:{
+            'Accept': 'application/json',
             Authorization:`Bearer ${token}`
         }
     });
@@ -48,6 +46,7 @@ export const unreadApi = (token, id) => {
         baseURL:apiurl,
         timeout:timeOut,
         headers:{
+            'Accept': 'application/json',
             Authorization:`Bearer ${token}`
         }
     });
@@ -60,6 +59,7 @@ export const shoWAllConvApi = (token) => {
         baseURL:apiurl,
         timeout:timeOut,
         headers:{
+            'Accept': 'application/json',
             Authorization:`Bearer ${token}`
         }
     });

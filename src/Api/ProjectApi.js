@@ -1,11 +1,6 @@
 import axios from "axios";
 import { apiurl, timeOut } from "./FormApi";
 
-axios.defaults.headers['Access-Control-Allow-Origin']='*'
-axios.defaults.headers['Access-Control-Request']='*'
-axios.defaults.headers['Access-Control-Allow-Methods']='GET, PUT, POST, DELETE, OPTIONS'
-axios.defaults.headers['Access-Control-Allow-Headers']='Access-Control-Allow-Headers: Content-Type, X-Auth-Token, Origin, Authorization, X-Requested-With'
-
 export const showAllProjectsApi = () => {
     const service = axios.create({
         baseURL:apiurl,
@@ -37,6 +32,7 @@ export const addProjectApi = (token, data) => {
         baseURL:apiurl,
         timeout:timeOut,
         headers:{
+            'Accept': 'application/json',
             Authorization:`Bearer ${token}`
         }
 
@@ -50,6 +46,7 @@ export const deleteProjectApi = (token, id) => {
         baseURL:apiurl,
         timeout:timeOut,
         headers:{
+            'Accept': 'application/json',
             Authorization:`Bearer ${token}`
         }
 
@@ -63,6 +60,7 @@ export const editProjectApi = (token, id, data) => {
         baseURL:apiurl,
         timeout:timeOut,
         headers:{
+            'Accept': 'application/json',
             Authorization:`Bearer ${token}`
         }
 
