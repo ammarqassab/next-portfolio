@@ -90,7 +90,7 @@ const AppLayout = ({ children }) => {
     return (
         <div className=' display-container bgc-1 height-100vh'>
             <Head>
-                {/* <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests"/> */}
+                <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
                 <meta charSet="utf-8" />
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                 <meta name="application-name" content={`${appName}`} />
