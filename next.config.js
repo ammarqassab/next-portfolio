@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     loader: 'imgix',
-    path: 'https://larect.000webhostapp.com/api',
+    path: 'https://larecta99.000webhostapp.com/api',
   },
   // basePath:'/larect',
   // assentPrefix:'/larect'
