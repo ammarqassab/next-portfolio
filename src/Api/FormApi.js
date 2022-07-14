@@ -1,6 +1,6 @@
-// import axios from "axios";
+import axios from "axios";
 
-const axios = require('axios').default;
+//const axios = require('axios').default;
 
 export const appName= 'Larect';
 export const apiurl= 'https://larect.000webhostapp.com/api';
@@ -93,8 +93,8 @@ export const Middleware = (token) => {
         timeout:timeOut,
         headers:{
             'Access-Control-Allow-Origin': true,
-            Authorization:`Bearer ${token}`,
-            withCredentials: true,
+            'Authorization':`Bearer ${token}`,
+            'withCredentials': true,
         }
 
     });
