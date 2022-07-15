@@ -74,9 +74,9 @@ const Login = () => {
     return (
         <form>
             <Head>
-                <meta name="keywords" content={`Login for ${appName} , Login for App, Login for Programming`}></meta>
-                <meta name="description" content={`Login for ${appName} : We are a company interested in programming and developing website and mobile applications`} />
-                <title>Login for {appName}</title>
+                <meta name="keywords" content={`Login to ${appName} , Login to App, Login to Programming`}></meta>
+                <meta name="description" content={`Login to ${appName} : We are a company interested in programming and developing website and mobile applications`} />
+                <title>Login to {appName}</title>
             </Head>
             <div className="container height-con"  style={{maxWidth:'1000px',margin:'5% auto'}} >
                 <div className=" margin padding app-box-shadow" >
