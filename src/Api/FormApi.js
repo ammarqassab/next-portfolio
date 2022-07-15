@@ -3,7 +3,7 @@ import axios from "axios";
 //const axios = require('axios').default;
 
 export const appName= 'Larect';
-export const apiurl= 'https://larecta99.000webhostapp.com/api';
+export const apiurl= 'http://shopingammar.c1.biz/api';
 export const timeOut= 30000;
 
 // axios.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
