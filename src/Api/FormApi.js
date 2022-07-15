@@ -58,19 +58,6 @@ export const registeruserApi = (values) => {
 };
 
 export const loginuserApi = (values) => {
-
-    const auth = axios.create({
-        baseURL:'https://larecta99.000webhostapp.com',
-        timeout:timeOut,
-        headers:{
-            'X-Requested-With': 'XMLHttpRequest',
-        },
-        withCredentials: true,
-
-    });
-    
-    const csrf = auth.get('/sanctum/csrf-cookie')
-    
     const service = axios.create({
         baseURL:apiurl,
         timeout:timeOut,
@@ -100,24 +87,12 @@ export const logoutuserApi = (token) => {
 
 export const Middleware = (token) => {
 
-    const auth = axios.create({
-        baseURL:'https://larecta99.000webhostapp.com',
-        timeout:timeOut,
-        headers:{
-            'X-Requested-With': 'XMLHttpRequest',
-        },
-        withCredentials: true,
-
-    });
-    
-    const csrf = auth.get('/sanctum/csrf-cookie')
-
     const service = axios.create({
         baseURL:apiurl,
         timeout:timeOut,
         headers:{
             Authorization:`Bearer ${token}`,
-        },
+        }
 
     });
     const responsee = service.post('/dashboard');
