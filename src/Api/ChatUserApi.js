@@ -6,7 +6,6 @@ export const allMessageApi = (token, id) => {
         baseURL:apiurl,
         timeout:timeOut,
         headers:{
-            'Accept': 'application/json',
             Authorization:`Bearer ${token}`
         }
     });
@@ -19,7 +18,6 @@ export const sentMessageApi = (token, values) => {
         baseURL:apiurl,
         timeout:timeOut,
         headers:{
-            'Accept': 'application/json',
             Authorization:`Bearer ${token}`
         }
 
@@ -33,7 +31,6 @@ export const markAsReadApi = (token, id) => {
         baseURL:apiurl,
         timeout:timeOut,
         headers:{
-            'Accept': 'application/json',
             Authorization:`Bearer ${token}`
         }
     });
@@ -46,7 +43,6 @@ export const unreadApi = (token, id) => {
         baseURL:apiurl,
         timeout:timeOut,
         headers:{
-            'Accept': 'application/json',
             Authorization:`Bearer ${token}`
         }
     });
@@ -59,7 +55,6 @@ export const shoWAllConvApi = (token) => {
         baseURL:apiurl,
         timeout:timeOut,
         headers:{
-            'Accept': 'application/json',
             Authorization:`Bearer ${token}`
         }
     });

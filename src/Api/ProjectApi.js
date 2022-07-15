@@ -32,7 +32,6 @@ export const addProjectApi = (token, data) => {
         baseURL:apiurl,
         timeout:timeOut,
         headers:{
-            'Accept': 'application/json',
             Authorization:`Bearer ${token}`
         }
 
@@ -46,7 +45,6 @@ export const deleteProjectApi = (token, id) => {
         baseURL:apiurl,
         timeout:timeOut,
         headers:{
-            'Accept': 'application/json',
             Authorization:`Bearer ${token}`
         }
 
@@ -60,7 +58,6 @@ export const editProjectApi = (token, id, data) => {
         baseURL:apiurl,
         timeout:timeOut,
         headers:{
-            'Accept': 'application/json',
             Authorization:`Bearer ${token}`
         }
 
