@@ -5,8 +5,9 @@ const nextConfig = {
     loader: 'imgix',
     path: 'https://larecta99.000webhostapp.com/api',
   },
-  httpAgentOptions: {
-    keepAlive: false,
+  env: {
+    appName: 'Larect',
+    apiUrl:'https://larecta99.000webhostapp.com/api',
   },
   // basePath:'/larect',
   // assentPrefix:'/larect'
