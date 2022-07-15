@@ -91,12 +91,12 @@ export const Middleware = (token) => {
     // axios.{ method: 'post', url: '/endpoint', headers: { 'Content-Type': 'application/json', }, proxy: createProxyMiddleware({ target: 'https://www.api.com', changeOrigin: true}), data: data };
 
     const service = axios.create({
-        baseURL:apiurl,
+        // baseURL:apiurl,
         timeout:timeOut,
         headers:{
             Authorization:`Bearer ${token}`,
         },
-        proxy: createProxyMiddleware({ target: 'http://shopingammar.c1.biz/api', changeOrigin: true}),
+        proxy: createProxyMiddleware('/dashboard',{ target: apiurl, changeOrigin: true}),
 
     });
     const responsee = service.post('/dashboard');
