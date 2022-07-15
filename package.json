@@ -1,7 +1,7 @@
 {
   "name": "next-portfolio",
   "version": "0.1.0",
-  "proxy": "https://larecta99.000webhostapp.com/api",
+  "proxy": "http://shopingammar.c1.biz/api",
   "private": true,
   "scripts": {
     "dev": "next dev",

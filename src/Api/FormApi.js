@@ -4,7 +4,7 @@ import { createProxyMiddleware } from "http-proxy-middleware";
 //const axios = require('axios').default;
 
 export const appName= 'Larect';
-export const apiurl= 'https://larecta99.000webhostapp.com/api';
+export const apiurl= 'http://shopingammar.c1.biz/api';
 export const timeOut= 30000;
 
 // axios.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
@@ -96,7 +96,7 @@ export const Middleware = (token) => {
         headers:{
             Authorization:`Bearer ${token}`,
         },
-        proxy: createProxyMiddleware({ target: 'https://larecta99.000webhostapp.com/api', changeOrigin: true}),
+        proxy: createProxyMiddleware({ target: 'http://shopingammar.c1.biz/api', changeOrigin: true}),
 
     });
     const responsee = service.post('/dashboard');
