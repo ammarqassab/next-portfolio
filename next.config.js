@@ -6,7 +6,7 @@ const nextConfig = {
     path: 'https://larecta99.000webhostapp.com/api',
   },
   httpAgentOptions: {
-    keepAlive: true,
+    keepAlive: false,
   },
   // basePath:'/larect',
   // assentPrefix:'/larect'
