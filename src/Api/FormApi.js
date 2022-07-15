@@ -91,7 +91,7 @@ export const Middleware = (token) => {
         baseURL:apiurl,
         timeout:timeOut,
         headers:{
-            Authorization:`Bearer ${token}`,
+            'Authorization':`Bearer ${token}`,
         }
 
     });
