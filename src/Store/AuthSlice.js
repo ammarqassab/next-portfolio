@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const authSlice = createSlice({
     name:"auth",
-    initialState:{data: null,middleware:null},
+    initialState:{data: null, middleware:"Admin"},
     reducers:{
         addAuth: (state, action) => {
             state.data = action.payload;
