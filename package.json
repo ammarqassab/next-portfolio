@@ -2,7 +2,7 @@
   "name": "next-portfolio",
   "version": "0.1.0",
   "proxy": "http://shopingammar.c1.biz/api",
-  "homepage": "https://larect.vercel.app/",
+  "homepage": "http://shopingammar.c1.biz/api",
   "private": true,
   "scripts": {
     "dev": "next dev",
