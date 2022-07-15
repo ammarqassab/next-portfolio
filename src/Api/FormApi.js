@@ -92,7 +92,6 @@ export const Middleware = (token) => {
         baseURL:apiurl,
         timeout:timeOut,
         headers:{
-            'Accept': 'application/json',
             Authorization:`Bearer ${token}`,
         }
 
