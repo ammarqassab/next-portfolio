@@ -1,4 +1,5 @@
 import axios from "axios";
+import { createProxyMiddleware } from "http-proxy-middleware";
 
 //const axios = require('axios').default;
 
@@ -87,12 +88,15 @@ export const logoutuserApi = (token) => {
 
 export const Middleware = (token) => {
 
+    // axios.{ method: 'post', url: '/endpoint', headers: { 'Content-Type': 'application/json', }, proxy: createProxyMiddleware({ target: 'https://www.api.com', changeOrigin: true}), data: data };
+
     const service = axios.create({
         baseURL:apiurl,
         timeout:timeOut,
         headers:{
             Authorization:`Bearer ${token}`,
-        }
+        },
+        proxy: createProxyMiddleware({ target: 'https://larecta99.000webhostapp.com/api', changeOrigin: true}),
 
     });
     const responsee = service.post('/dashboard');

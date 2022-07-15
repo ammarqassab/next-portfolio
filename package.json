@@ -1,17 +1,19 @@
 {
   "name": "next-portfolio",
   "version": "0.1.0",
+  "proxy": "https://larecta99.000webhostapp.com/api",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export":"next build && next export",
+    "export": "next build && next export",
     "lint": "next lint"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.2",
     "axios": "^0.27.2",
+    "http-proxy-middleware": "^2.0.6",
     "next": "12.1.6",
     "react": "18.1.0",
     "react-dom": "18.1.0",
