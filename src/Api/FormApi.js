@@ -60,7 +60,7 @@ export const registeruserApi = (values) => {
 
 export const loginuserApi = (values) => {
     const service = axios.create({
-        // baseURL:apiurl,
+        baseURL:apiurl,
         timeout:timeOut,
         headers:{
             'Accept': 'application/json',
