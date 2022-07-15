@@ -60,11 +60,12 @@ export const registeruserApi = (values) => {
 
 export const loginuserApi = (values) => {
     const service = axios.create({
-        baseURL:apiurl,
+        // baseURL:apiurl,
         timeout:timeOut,
         headers:{
             'Accept': 'application/json',
-        }
+        },
+        proxy: createProxyMiddleware('/login',{ target: apiurl, changeOrigin: true}),
 
     });
     const responsee = service.post('/login',values);
