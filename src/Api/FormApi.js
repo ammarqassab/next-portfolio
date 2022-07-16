@@ -27,9 +27,9 @@ export const timeOut= 30000;
 
 //http://shopingammar.c1.biz/
 
-axios.defaults.validateStatus = () => {
-    return true;
-    };
+// axios.defaults.validateStatus = () => {
+//     return true;
+//     };
 
 // process.env.NEXT_PUBLIC_BACKEND_URL
 
