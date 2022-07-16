@@ -7,7 +7,7 @@ const nextConfig = {
   },
   env: {
     appName: 'Larect',
-    apiUrl:'https://larecta99.000webhostapp.com/api',
+    apiUrl: 'https://larecta99.000webhostapp.com/api',
   },
   // basePath:'/larect',
   // assentPrefix:'/larect'
