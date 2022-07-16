@@ -6,6 +6,8 @@ export const appName= process.env.appName;
 export const apiurl= process.env.apiUrl;
 export const timeOut= 30000;
 
+axios.defaults.headers.common['Access-Control-Allow-Origin'] = false;
+
 // axios.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
 // axios.defaults.headers.post['X-Requested-With'] = 'XMLHttpRequest';
 // axios.defaults.headers['Access-Control-Allow-Origin']='*'

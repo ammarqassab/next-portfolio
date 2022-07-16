@@ -1,6 +1,8 @@
 import axios from "axios";
 import { apiurl, timeOut } from "./FormApi";
 
+axios.defaults.headers.common['Access-Control-Allow-Origin'] = false;
+
 export const showAllProjectsApi = () => {
     const service = axios.create({
         baseURL:apiurl,
