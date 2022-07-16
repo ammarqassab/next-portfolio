@@ -31,11 +31,9 @@ const Projects = () => {
         <>
             <div className=' animate-top padding'>
                 <div className='row app-box-shadow margin textc-5 padding'>
-                    <h1 className='col m75 xlarge' style={{minHeight:'54px'}} >Number of projects :<span className=' textc-4'> {Projects !=null && Projects.length > 0 ? Projects.length :'0'}</span></h1>
+                    <h1 className='col m75 xxlarge' style={{minHeight:'54px'}} >Number of projects :<span className=' textc-4'> {Projects !=null && Projects.length > 0 ? Projects.length :'0'}</span></h1>
                     <div className='col m25 display-container' style={{height:'74px'}}>
-                        <div className='btn round-large display-middle' onClick={() => handleToggle()}>
-                            <span className="fas fa-plus"></span> Add Project
-                        </div>
+                        <div className='btn round-large display-middle fas fa-plus xlarge' onClick={() => handleToggle()}> Add Project</div>
                     </div>
                 </div>
                 {taggle ? <AddProject id={null} index={null} handleToggle={handleToggle} /> : edittaggle ? <AddProject id={editid} index={editindex + 1} handleToggle={handleeditToggle} /> : null}

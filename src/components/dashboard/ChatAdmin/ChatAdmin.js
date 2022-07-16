@@ -18,8 +18,8 @@ const ChatAdmin = () => {
             {userId != null ? <Chat userId={userId} /> :null}
 
             <div className='transparent display-container padding bgc-1 textc-2 app-box-shadow' style={{margin:'100px 16px 16px'}} >
-                <h1>Chat :<span className=' textc-4'> {chatAdmin !=null && chatAdmin.length > 0 ? chatAdmin.length :'0'}</span></h1>
-                <div className=' display-right btn round-large margin-right textc-2 large fas fa-plus' onClick={() => steuserId(null)} style={{paddingBottom:'12px'}} > Close Chat</div>
+                <h1 className='xxlarge'>Chat :<span className=' textc-4'> {chatAdmin !=null && chatAdmin.length > 0 ? chatAdmin.length :'0'}</span></h1>
+                <div className=' display-right btn round-large margin-right textc-2 large fas fa-plus xlarge' onClick={() => steuserId(null)} style={{paddingBottom:'12px'}} > Close Chat</div>
             </div>
             
             <ListChatAdmin handleid={handleid}/>
