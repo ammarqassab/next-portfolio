@@ -19,7 +19,7 @@ export const timeOut= 30000;
 // axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 // axios.defaults.headers['content-type']='application/json'
 // axios.defaults.headers['withCredentials']=true
-// axios.defaults.headers['crossorigin']=true
+axios.defaults.headers['crossorigin']=true
 // axios.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
 //touch .nojekyll
 
