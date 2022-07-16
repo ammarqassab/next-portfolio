@@ -16,3 +16,4 @@ const nextConfig = {
 module.exports = nextConfig
 
 // 'https://larect.000webhostapp.com/api'
+// 'http://shopingammar.c1.biz/api'

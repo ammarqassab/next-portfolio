@@ -24,9 +24,6 @@ const Projects = () => {
         seteeditid(id);
     };
 
-    // let Projectslen = 0;
-    // if(Projects!=null && Projects.length>0) {for (let i in Projects) { Projectslen ++ };}
-
     return (
         <>
             <div className=' animate-top padding'>
