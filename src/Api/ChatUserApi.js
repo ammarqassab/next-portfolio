@@ -1,7 +1,7 @@
 import axios from "axios";
 import { apiurl, timeOut } from "./FormApi";
 
-axios.defaults.headers.common['Access-Control-Allow-Origin'] = false;
+axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
 
 export const allMessageApi = (token, id) => {
     const service = axios.create({
