@@ -8,7 +8,7 @@ export const timeOut= 30000;
 
 // axios.defaults.headers['Access-Control-Allow-Credentials'] = true;
 // 'Access-Control-Allow-Credentials':true
-axios.defaults.headers['Content-Type'] = 'application/json;charset=UTF-8';
+// axios.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
 // axios.defaults.headers.post['X-Requested-With'] = 'XMLHttpRequest';
 // axios.defaults.headers['Access-Control-Allow-Origin']='*'
 // axios.defaults.headers['Access-Control-Request']='*'
