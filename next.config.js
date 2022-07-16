@@ -14,3 +14,5 @@ const nextConfig = {
 }
 
 module.exports = nextConfig
+
+// 'https://larect.000webhostapp.com/api'
