@@ -61,7 +61,7 @@ const ListChatAdmin = ({handleid}) => {
             </div>
 
             <div className=' row-padding' >
-            {chatAdmin ?
+            {chatAdmin !=null && chatAdmin.length > 0 ?
                 chatAdmin.map( (iteme, index) =>
                 <div className='col m50 l25 padding pointer' key={index} onClick={() => handleid(iteme.user_id)}>
                     <Chats iteme={iteme}/>

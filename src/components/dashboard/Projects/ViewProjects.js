@@ -24,7 +24,7 @@ const ViewProjects = ({handleeditToggle}) => {
         <div className='animate-top padding'>
             <div className='app-box-shadow padding'>
                 <div className='row' >
-                    {Projects ? Projects.map((iteme, index) => (
+                    {Projects != null && Projects.length > 0 ? Projects.map((iteme, index) => (
                         <div className='col l50' key={index}>
                             <div className='row app-box-shadow hover-app-box-shadow pointer margin'>
                                 <div className='col m33 l50 display-container' style={{padding:"8px",minHeight:'200px'}} >
