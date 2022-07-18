@@ -3,11 +3,11 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     loader: 'imgix',
-    path: 'http://shopingammar.c1.biz/api',
+    path: 'https://larecta99.000webhostapp.com/api',
   },
   env: {
     appName: 'Larect',
-    apiUrl: 'http://shopingammar.c1.biz/api',
+    apiUrl: 'https://larecta99.000webhostapp.com/api',
   },
   // basePath:'/larect',
   // assentPrefix:'/larect'
