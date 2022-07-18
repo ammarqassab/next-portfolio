@@ -71,21 +71,21 @@ const AppLayout = ({ children }) => {
 
     },[])
 
-    // React.useEffect(() => {
+    React.useEffect(() => {
 
-    // if(localStorage.getItem("token")) {
+    if(localStorage.getItem("token")) {
 
-    //     const token = localStorage.getItem("token");
+        const token = localStorage.getItem("token");
 
-    //     Middleware(token)
-    //     .then((res) => {
-    //         dispatch(addMiddleware(res.data.message));
-    //     })
-    //     .catch((err) => logout());
+        Middleware(token)
+        .then((res) => {
+            dispatch(addMiddleware(res.data.message));
+        })
+        .catch((err) => logout());
 
-    // }
+    }
 
-    // })
+    })
 
     return (
         <div className=' display-container bgc-1 height-100vh'>
