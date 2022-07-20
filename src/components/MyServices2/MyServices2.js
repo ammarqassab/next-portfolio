@@ -9,19 +9,36 @@ const MyServices2 = () => {
 
     return (
         <>
-        <div className=' padding clip-path-add imguser center textc-2'>
-            <h1 className=' xxlarge bold margin' >Need a Developer ?<br/>get special offer !</h1>
-            <br/>
-            <p className='xlarge margin textc-2 bold'>The easy and sustainable way to gain better rankings and more visitors on your business .</p>
-            {Auth && middleware == 'User'?
-                <Link href={'/chat'}>
-                    <a className='fab fa-telegram-plane button xlarge border borderc-2 hover-bgc-1 round-large textc-2 hover-textc-5 hover-borderc-1 margin text-decoration-none'> Connect with us</a>
-                </Link>
-            :
-                <Link href={'/register'}>
-                    <a className='fab fa-telegram-plane button xlarge border borderc-2 hover-bgc-1 round-large textc-2 hover-textc-5 hover-borderc-1 margin text-decoration-none'> Connect with us</a>
-                </Link>
-            }
+        <div className=' padding textc-2 margin-top'>
+            <div className=' row' >
+                <div className='col m50 left-align' >
+                    <h1 className=' xxlarge bold margin leftbar'  style={{paddingLeft:'8px'}} >Need a Developer ?<br/>get special offer !</h1>
+                    <br/>
+                    <p className='xlarge margin textc-2 bold'>The easy and sustainable way to gain better rankings and more visitors on your business .</p>
+                    {Auth && middleware == 'User'?
+                        <Link href={'/chat'}>
+                            <a className='fab fa-telegram-plane btn xlarge round-large margin text-decoration-none'> Connect with us</a>
+                        </Link>
+                    :
+                        <Link href={'/register'}>
+                            <a className='fab fa-telegram-plane btn xlarge round-large margin text-decoration-none'> Connect with us</a>
+                        </Link>
+                    }
+                </div>
+                <div className='col m50 padding' >
+                    <div className='height-400px padding-top-64'>
+                        <div className='cube margin-top'>
+                            <div className='topcube'><div className='center' style={{paddingTop:'33%',fontSize:'44px'}} >Founders</div></div>
+                            <div>
+                                <span style={{"--ii":"0"}}><div className='center' style={{paddingTop:'35%',fontSize:'40px',color:'gold'}} >AMMAR</div></span>
+                                <span style={{"--ii":"1"}}><div className='center' style={{paddingTop:'35%',fontSize:'40px',color:'gold'}} >QASSAB</div></span>
+                                <span style={{"--ii":"2"}}><div className='center' style={{paddingTop:'35%',fontSize:'40px'}} >AHMAD</div></span>
+                                <span style={{"--ii":"3"}}><div className='center' style={{paddingTop:'35%',fontSize:'40px'}} >ALAA</div></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div className=' padding bgc-header textc-2 margin-top'>
             <h1 className=' xxlarge bold margin leftbar' style={{paddingLeft:'8px'}} >Have a project in mind ?<br/>Let’s get to work .</h1>

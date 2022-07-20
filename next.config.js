@@ -9,8 +9,8 @@ const nextConfig = {
     appName: 'Larect',
     apiUrl: 'http://shopingammar.c1.biz/api',
   },
-  // basePath:'/',
-  // assentPrefix:'/'
+  // basePath:'/larect',
+  // assentPrefix:'/larect'
 }
 
 module.exports = nextConfig

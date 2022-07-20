@@ -8,7 +8,7 @@ import { addAuth, addMiddleware } from '../../Store/AuthSlice'
 import { showAllProjectsApi } from '../../Api/ProjectApi'
 import { addProject } from '../../Store/ProjectSlice'
 import Upscroll from '../Upscroll/Upscroll'
-import { appName, Middleware } from '../../Api/FormApi'
+import { appName, logoutuserApi, Middleware } from '../../Api/FormApi'
 import { useRouter } from 'next/router';
 import { allMessageApi, shoWAllConvApi } from '../../Api/ChatUserApi'
 import { addChatUser } from '../../Store/ChatUserSlice'
@@ -21,6 +21,10 @@ const AppLayout = ({ children }) => {
     const dispatch = useDispatch();
 
     const logout = () => {
+        logoutuserApi(Auth.token)
+        .then((responsee) =>{console.log(responsee.data.messages)})
+        .catch( () => alert("حدث خطأ في تسجيل الخروج"));
+
         dispatch(addAuth(null));
         dispatch(addMiddleware(null));
         localStorage.clear();

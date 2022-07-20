@@ -9,7 +9,7 @@ import ProjectsGallery from '../src/components/ProjectsGallery/ProjectsGallery';
 import Notifications from '../src/components/Chat/Notifications';
 import MyServices2 from '../src/components/MyServices2/MyServices2';
 import MyServices3 from '../src/components/MyServices3/MyServices3';
-import { appName } from '../src/Api/FormApi';
+import { appName, logoutuserApi } from '../src/Api/FormApi';
 import ApplicationLogo from '../src/components/ApplicationLogo';
 
 const Navelink = ({link, icone, children, ...prope}) => {
@@ -30,6 +30,10 @@ const Home = () => {
     const dispatch = useDispatch();
 
     const logout = () => {
+        logoutuserApi(Auth.token)
+        .then((responsee) =>{console.log(responsee.data.messages)})
+        .catch( () => alert("حدث خطأ في تسجيل الخروج"));
+
         dispatch(addAuth(null));
         dispatch(addMiddleware(null));
         localStorage.clear();

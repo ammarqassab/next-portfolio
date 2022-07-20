@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { useDispatch, useSelector } from 'react-redux';
 import { addAuth, addMiddleware } from '../../../Store/AuthSlice';
+import { logoutuserApi } from '../../../Api/FormApi';
 
 const Siderbar = () => {
 
@@ -16,6 +17,10 @@ const Siderbar = () => {
     }
 
     const logout = () => {
+        logoutuserApi(Auth.token)
+        .then((responsee) =>{console.log(responsee.data.messages)})
+        .catch( () => alert("حدث خطأ في تسجيل الخروج"));
+
         dispatch(addAuth(null));
         dispatch(addMiddleware(null));
         localStorage.clear();

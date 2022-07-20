@@ -47,7 +47,7 @@
 --textc-1: rgb(0, 0, 0);
 --textc-2: rgb(255, 255, 255);
 --textc-3: #0070b1;
---textc-4: #39c7da;
+--textc-4: rgb(57, 199, 218);
 --borc-1: #222;
 --borc-2: #fff;
 --borc-3: #0070b1;
@@ -1007,7 +1007,7 @@ input:disabled {
 .height-auto {
   height: auto;
 }
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
   .width-5vw {
     width: 5vw !important;
   }
@@ -1053,7 +1053,7 @@ input:disabled {
   .height-100auto {
     height: auto;
   }
-}
+} */
 
 .cell-row {
   display: table;
@@ -2238,6 +2238,68 @@ div:hover.clip-path-card
 }
 /* end menu */
 
-/* MyServices */
+/* box-animate */
 
-/* end MyServices */
+.cube {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  transform-style: preserve-3d;
+  animation: boxanimat 4s linear infinite;
+  margin: auto;
+}
+@keyframes boxanimat
+{
+  0%
+  {
+    transform: rotateX(-30deg) rotateY(360deg);
+  }
+  100%
+  {
+    transform: rotateX(-30deg) rotateY(0deg);
+  }
+}
+.cube div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.cube div span{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#111,var(--bgc-4));
+  transform: rotateY(calc(90deg * var(--ii))) translateZ(100px);
+  /* translateZ = widthcube / 2 = 100 */
+}
+.topcube {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 200px;
+  background-color: rgba(17, 17, 17, 0.85);
+  transform: rotateX(90deg) translateZ(100px);
+}
+.topcube::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 200px;
+  background-color: var(--bgc-4);
+  transform: translateZ(-250px);
+  filter: blur(25px);
+  box-shadow: 0 0 120px rgba(57, 199, 218,0.2),
+  0 0 150px rgba(57, 199, 218,0.4),
+  0 0 180px rgba(57, 199, 218,0.6),
+  0 0 200px rgba(57, 199, 218,0.8);
+}
+/* end box-animate */
