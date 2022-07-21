@@ -61,8 +61,9 @@ const AddProject = (props) => {
         addProjectApi(auth.token, formData)
         .then( (responsee) => {
             dispatch(updataProject(responsee.data.data));
+            alert("تم إضافة المشروع");
         })
-        .catch( () => console.log("حدث خطأ في إضافة المشروع"));
+        .catch( () => alert("حدث خطأ في إضافة المشروع"));
     };
 
     const edit = (e) => {
@@ -84,8 +85,9 @@ const AddProject = (props) => {
         editProjectApi(auth.token, editid, formData)
         .then((responsee) =>{
             dispatch(editProject([editindex, responsee.data.data]));
+            alert("تم تعديل المشروع");
         })
-        .catch( () => console.log("حدث خطأ في تعديل المشروع"));
+        .catch( () => alert("حدث خطأ في تعديل المشروع"));
     };
 
     return (
