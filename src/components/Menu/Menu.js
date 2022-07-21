@@ -31,7 +31,7 @@ const Menu = ({services, projects}) => {
     const logout = () => {
         logoutuserApi(Auth.token)
         .then((responsee) =>{console.log(responsee.data.messages)})
-        .catch( () => alert("حدث خطأ في تسجيل الخروج"));
+        .catch( () => console.log("حدث خطأ في تسجيل الخروج"));
 
         dispatch(addAuth(null));
         dispatch(addMiddleware(null));
@@ -51,7 +51,7 @@ const Menu = ({services, projects}) => {
                 {Auth && middleware=='Admin' ?
                     <Link href="/dashboard/chatadmin"><a className=' fab fa-telegram-plane text-decoration-none'></a></Link>
                 :
-                    <a className=' fas fa-people-carry '></a>
+                    <Link href="/projects"><a className=' fas fa-people-carry text-decoration-none'></a></Link>
                 }
                 </li>
                 <li id='li-5' style={{"--i":"4"}} onClick={() => activefun('li-5')}>

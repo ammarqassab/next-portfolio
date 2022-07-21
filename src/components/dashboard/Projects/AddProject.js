@@ -62,7 +62,7 @@ const AddProject = (props) => {
         .then( (responsee) => {
             dispatch(updataProject(responsee.data.data));
         })
-        .catch( () => alert("حدث خطأ في إضافة المشروع"));
+        .catch( () => console.log("حدث خطأ في إضافة المشروع"));
     };
 
     const edit = (e) => {
@@ -85,7 +85,7 @@ const AddProject = (props) => {
         .then((responsee) =>{
             dispatch(editProject([editindex, responsee.data.data]));
         })
-        .catch( () => alert("حدث خطأ في تعديل المشروع"));
+        .catch( () => console.log("حدث خطأ في تعديل المشروع"));
     };
 
     return (

@@ -19,7 +19,7 @@ const Siderbar = () => {
     const logout = () => {
         logoutuserApi(Auth.token)
         .then((responsee) =>{console.log(responsee.data.messages)})
-        .catch( () => alert("حدث خطأ في تسجيل الخروج"));
+        .catch( () => console.log("حدث خطأ في تسجيل الخروج"));
 
         dispatch(addAuth(null));
         dispatch(addMiddleware(null));

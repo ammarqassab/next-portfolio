@@ -23,7 +23,7 @@ const AppLayout = ({ children }) => {
     const logout = () => {
         logoutuserApi(Auth.token)
         .then((responsee) =>{console.log(responsee.data.messages)})
-        .catch( () => alert("حدث خطأ في تسجيل الخروج"));
+        .catch( () => console.log("حدث خطأ في تسجيل الخروج"));
 
         dispatch(addAuth(null));
         dispatch(addMiddleware(null));
@@ -53,7 +53,7 @@ const AppLayout = ({ children }) => {
                     dispatch(addChatUser(responsee.data.messages));
 
                 })
-                .catch( () => alert("حدث خطأ في الحصول على المحادثة"));
+                .catch( () => console.log("حدث خطأ في الحصول على المحادثة"));
             }
 
             if(token && role =="admin") {
@@ -63,7 +63,7 @@ const AppLayout = ({ children }) => {
                     dispatch(addChatAdmin(responsee.data.data));
 
                 })
-                .catch( () => alert("حدث خطأ في الحصول على المحادثات الأدمن"));
+                .catch( () => console.log("حدث خطأ في الحصول على المحادثات الأدمن"));
             }
         }
 

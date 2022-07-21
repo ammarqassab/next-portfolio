@@ -7,6 +7,8 @@ const BodyChat = ({userId, scroll}) => {
 
     const auth = useSelector(state => state.auth.data);
     const chatUser = useSelector(state => state.chatUser.data);
+    const [handlemodal, sethandlemodal] = React.useState(false)
+    const [srcimg, setsrcimg] = React.useState(null)
 
     function time(text) {
         const time = new Date(text);
@@ -40,7 +42,7 @@ const BodyChat = ({userId, scroll}) => {
                         </div>
                         : iteme.type == 'attachment' ?
                         <div className={`col s100  ${iteme.user_id==auth.id?' rtl':''}`} key={index}>
-                            <div className={` display-container margin width-fit-content m-w border ${iteme.user_id==auth.id?' borderc-4':' borderc-3'}`} style={{width:'600px',height:'auto'}}>
+                            <div className={` display-container margin width-fit-content m-w border ${iteme.user_id==auth.id?' borderc-4':' borderc-3'}`} style={{width:'600px',height:'auto'}}  onClick={() => {setsrcimg(iteme.body.file_path);sethandlemodal(true)}}>
                                 {iteme.body.file_path ? <Image src={`/imageChat/${iteme.body.file_path}`} width={`600px`} height={`400px`} layout="responsive" alt={iteme.body.file_name}  empty="true"/>:null}
                             </div>
                         </div>
@@ -51,6 +53,16 @@ const BodyChat = ({userId, scroll}) => {
                     }
                 </div>
             </div>
+            {handlemodal ?
+                <div className="modal" onClick={() => sethandlemodal(false)}>
+                    <div className="modal-content">
+                        <span className='width-100'>
+                            <Image src={`/imageChat/${srcimg}`} width={`100%`} height={`50%`} layout="responsive" alt={srcimg} empty="true"/>
+                        </span>
+                    </div>
+                </div>
+            :null
+            }
             <SentChat userId={userId} scroll={scroll}/>
         </div>
     )

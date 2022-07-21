@@ -11,6 +11,8 @@ const Projectid = () => {
     const router = useRouter()
     const { pid } = router.query
     const Projects = useSelector(state => state.project.data)
+    const [handlemodal, sethandlemodal] = React.useState(false)
+    const [srcimg, setsrcimg] = React.useState(null)
     let namepro = '';
     let despro = '';
 
@@ -66,7 +68,7 @@ const Projectid = () => {
                                                 {iteme.images.length > 0 ? 
                                                     <>
                                                     {iteme.images.map((itemeimg, indeximg) => (
-                                                        <span className='mySlides width-100' style={indeximg==0 ?null:{display:'none'}} key={indeximg}>
+                                                        <span className='mySlides width-100 pointer' style={indeximg==0 ?null:{display:'none'}} key={indeximg} onClick={() => {setsrcimg(itemeimg.path);sethandlemodal(true)}}>
                                                             <Image src={`/image/${itemeimg.path}`} width={`100%`} height={`50%`} layout="responsive" alt={iteme.name} empty="true"/>
                                                         </span>
                                                     ) 
@@ -115,6 +117,16 @@ const Projectid = () => {
                     </div>
                 </div>
             </div>
+            {handlemodal ?
+                <div className="modal" onClick={() => sethandlemodal(false)}>
+                    <div className="modal-content">
+                        <span className='width-100'>
+                            <Image src={`/image/${srcimg}`} width={`100%`} height={`50%`} layout="responsive" alt={srcimg} empty="true"/>
+                        </span>
+                    </div>
+                </div>
+            :null
+            }
         </div>
     )
 }

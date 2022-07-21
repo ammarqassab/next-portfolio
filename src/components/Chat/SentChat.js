@@ -46,7 +46,7 @@ const SentChat = ({userId, scroll}) => {
                 top:0,
             });
         })
-        .catch( () => alert("حدث خطأ في إرسال الرسالة"));
+        .catch( () => console.log("حدث خطأ في إرسال الرسالة"));
 
     };
 

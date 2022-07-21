@@ -15,7 +15,7 @@ const ViewProjects = ({handleeditToggle}) => {
         .then(() => {
             dispatch(deleteProject(index));
         })
-        .catch(() => alert("حدث خطأ في حذف المشروع"));
+        .catch(() => console.log("حدث خطأ في حذف المشروع"));
     };
 
     const up = () => {window.scrollTo({top:0, behavior: 'smooth'})}

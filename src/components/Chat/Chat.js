@@ -27,10 +27,10 @@ const Chat = ({userId}) => {
 
                 markAsReadApi(auth.token, userId)
                 .then((responsee) =>{numref=0})
-                .catch( () => {});
+                .catch( () => {console.log("حدث خطأ في إرسال طلب قراءة المحادثة")});
 
             })
-            .catch( () => {});
+            .catch( () => {console.log("حدث خطأ في الحصول على المحادثة")});
         }
 
         if(auth.token && auth.role =="user" && numref == 0) {
@@ -45,10 +45,10 @@ const Chat = ({userId}) => {
 
                 markAsReadApi(auth.token, auth.id)
                 .then((responsee) =>{numref=0})
-                .catch( () => {});
+                .catch( () => {console.log("حدث خطأ في إرسال طلب قراءة المحادثة")});
 
             })
-            .catch( () => {});
+            .catch( () => {console.log("حدث خطأ في الحصول على المحادثة")});
         }
 
     }
@@ -59,7 +59,7 @@ const Chat = ({userId}) => {
 
             markAsReadApi(auth.token, userId)
             .then((responsee) =>{})
-            .catch( () => alert("حدث خطأ في إرسال طلب قراءة المحادثة"));
+            .catch( () => console.log("حدث خطأ في إرسال طلب قراءة المحادثة"));
 
             scroll.current.scrollIntoView();
             window.scrollTo({
@@ -79,7 +79,7 @@ const Chat = ({userId}) => {
             });
 
             })
-            .catch( () => alert("حدث خطأ في الحصول على المحادثة"));
+            .catch( () => console.log("حدث خطأ في الحصول على المحادثة"));
         }
 
         setInterval(() => interconnection(), 60000)

@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-no-target-blank */
 import React from 'react'
+import Link from 'next/link'
 import { appName } from '../../Api/FormApi'
 import ApplicationLogo from '../ApplicationLogo'
 
@@ -15,6 +16,7 @@ const Footer = () => {
                     <h1 className="textc-4 hover-textc-4 xlarge" >Contact us :</h1>
                     <a href='https://wa.me/+963943435682' target='_blank' className="textc-2 hover-textc-4 large text-decoration-none display-block margin-top" >+963943435682</a>
                     <a href='mailto:ammarqassab1997@gmail.com' target='_blank' className="textc-2 hover-textc-4 large text-decoration-none display-block margin-top" >ammarqassab1997@gmail.com</a>
+                    <Link href="/projects"><a className='textc-2 hover-textc-4 large text-decoration-none display-block margin-top'>Our Projects</a></Link>
                 </div>
                 <div className='col s100' >
                     {/* <hr className=' borderc-4'/> */}
