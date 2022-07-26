@@ -93,7 +93,7 @@ const AddProject = (props) => {
     return (
         <div className='padding app-box-shadow textc-5 animate-top' style={{margin:'30px 16px'}} >
             <div className='display-container margin-top margin-bottom'>
-                <div className=' display-right btn round-large margin-right margin-top xlarge' onClick={handleToggle}> x </div>
+                <div className=' display-right btn round-large margin-right margin-top xlarge fas fa-times' onClick={handleToggle}></div>
             </div>
 
             <form>
@@ -116,14 +116,13 @@ const AddProject = (props) => {
                         <input type="text" className="input transparent round textc-2" placeholder="Enter the project link" value={link} onChange={(e) => setlink(e.target.value)}/>
                     </div>
                     <div className="col s100 padding" >
-                        <input type="text" className="input transparent round textc-2" placeholder="Write Short Description ..." value={description} onChange={(e) => setdescription(e.target.value)}/>
+                        <textarea className="input transparent round textc-2" placeholder="Write Short Description ..." value={description} onChange={(e) => setdescription(e.target.value)} style={{minHeight:'200px',resize:'vertical'}} ></textarea>
                     </div>
                     <div className="col s100 padding" >
                         <input type="file" multiple accept="image/*" className="input transparent round textc-2" onChange={(e) => handlefile(e)}/>
                     </div>
                     <div className="col s100 padding" >
-                        <button type="submit" className="btn round-large margin-right margin-top" onClick={(e) => {editid ? edit(e) : add(e)}}>{editid ? "Edit" : "Add"}</button>
-                        <button type="reset" className="btn round-large margin-top">Reset</button>
+                        <button type="submit" className={`btn round-large margin-right margin-top fas ${editid ? ' fa-edit': ' fa-plus'}`} onClick={(e) => {editid ? edit(e) : add(e)}}> {editid ? "Edit" : "Add"}</button>
                     </div>
                 </div>
             </form>

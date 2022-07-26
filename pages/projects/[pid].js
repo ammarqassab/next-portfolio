@@ -13,6 +13,7 @@ const Projectid = () => {
     const Projects = useSelector(state => state.project.data)
     const [handlemodal, sethandlemodal] = React.useState(false)
     const [srcimg, setsrcimg] = React.useState(null)
+    const [imgsize, setimgsize] = React.useState('')
     let namepro = '';
     let despro = '';
 
@@ -36,18 +37,20 @@ const Projectid = () => {
     function showDivs(n) {
         var i;
         var x = document.getElementsByClassName("mySlides");
-        var dots = document.getElementsByClassName("demo");
+        // var dots = document.getElementsByClassName("demo");
         if (n > x.length) {slideIndex = 1}    
         if (n < 1) {slideIndex = x.length}
         for (i = 0; i < x.length; i++) {
             x[i].style.display = "none";  
         }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
+        // for (i = 0; i < dots.length; i++) {
+        //     dots[i].className = dots[i].className.replace(" active", "");
+        // }
         x[slideIndex-1].style.display = "block";  
-        dots[slideIndex-1].className += " active";
+        // dots[slideIndex-1].className += " active";
     }
+
+    const funimgsize = (sizeimg) => {setimgsize(sizeimg)}
     
     return (
         <div className=' height-con'>
@@ -63,12 +66,13 @@ const Projectid = () => {
                             (iteme.id == pid ?
                                 <div className='col s100' key={index}>
                                     <div className='row '>
-                                        <div className='col s100 ' style={{padding:"8px",maxWidth:'700px',margin:'0px auto 10px'}} >
+                                        <div className='col s100 left-align ' style={{padding:"8px",maxWidth:'700px',margin:'0px auto 10px'}} >
                                             <div className=' width-100' >
                                                 {iteme.images.length > 0 ? 
                                                     <>
                                                     {iteme.images.map((itemeimg, indeximg) => (
-                                                        <span className='mySlides width-100 pointer' style={indeximg==0 ?null:{display:'none'}} key={indeximg} onClick={() => {setsrcimg(itemeimg.path);sethandlemodal(true)}}>
+                                                        <span className='mySlides width-100 pointer display-container' style={indeximg==0 ?null:{display:'none'}} key={indeximg} onClick={() => {setsrcimg(itemeimg.path);sethandlemodal(true)}}>
+                                                            <div className='large textc-2 display-bottomleft margin padding-small opacity-min round-large bgc-1 ' style={{zIndex:'10'}}>{indeximg + 1} of {iteme.images.length}</div>
                                                             <Image src={`/image/${itemeimg.path}`} width={`100%`} height={`50%`} layout="responsive" alt={iteme.name} empty="true"/>
                                                         </span>
                                                     ) 
@@ -84,7 +88,7 @@ const Projectid = () => {
                                                     <button className="btn stretch margin-top round-large large" onClick={() => plusDivs(1)} style={{marginBottom:'0px'}}>Next ❯</button>
                                                 </div>
                                             </div>
-                                            <div className='center' >
+                                            {/* <div className='center' >
                                                 {iteme.images.length > 0 ? 
                                                     <>
                                                     {iteme.images.map((itemeimg, indeximg) => (
@@ -93,7 +97,7 @@ const Projectid = () => {
                                                     )}
                                                     </>
                                                 :null}
-                                            </div>
+                                            </div> */}
                                         </div>
                                         <div className='col s100 textc-2 margin padding' style={{padding:"8px"}}>
                                             <div className='row' >
@@ -118,11 +122,16 @@ const Projectid = () => {
                 </div>
             </div>
             {handlemodal ?
-                <div className="modal" onClick={() => sethandlemodal(false)}>
+                <div className="modal">
+                    <div className='row center display-topmiddle flex-nowrap' style={{zIndex:'10000000000'}} >
+                        <button type="submit" className="btn round-large margin fas fa-minus bgc-1" onClick={() => funimgsize('')}></button>
+                        <button type="submit" className="btn round-large margin fas fa-times bgc-1" onClick={() => sethandlemodal(false)}></button>
+                        <button type="submit" className="btn round-large margin fas fa-plus bgc-1" onClick={() => funimgsize(' rotimg')}></button>
+                    </div>
                     <div className="modal-content">
-                        <span className='width-100'>
-                            <Image src={`/image/${srcimg}`} width={`100%`} height={`50%`} layout="responsive" alt={srcimg} empty="true"/>
-                        </span>
+                        <div className={`width-100 ${imgsize}`}>
+                            <Image src={`/image/${srcimg}`} width="100%" height="100%" layout="responsive" objectFit='contain' alt={srcimg} empty="true"/>
+                        </div>
                     </div>
                 </div>
             :null

@@ -45,6 +45,36 @@ export const logoutuserApi = (token) => {
     return responsee;
 };
 
+// users 
+
+export const ShowAllUsersApi = (token) => {
+
+    const service = axios.create({
+        baseURL:apiurl,
+        timeout:timeOut,
+        headers:{
+            Authorization:`Bearer ${token}`,
+        }
+
+    });
+    const responsee = service.get('/dashboard/showalluser');
+    return responsee;
+};
+
+export const deleteUserApi = (token, id) => {
+
+    const service = axios.create({
+        baseURL:apiurl,
+        timeout:timeOut,
+        headers:{
+            Authorization:`Bearer ${token}`,
+        }
+
+    });
+    const responsee = service.post('/dashboard/deleteuser/' + id);
+    return responsee;
+};
+
 //Middleware
 
 export const Middleware = (token) => {

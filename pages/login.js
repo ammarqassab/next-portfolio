@@ -3,10 +3,11 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useDispatch } from 'react-redux';
 import { addAuth } from '../src/Store/AuthSlice';
-import { appName, loginuserApi } from '../src/Api/FormApi';
+import { appName, loginuserApi, ShowAllUsersApi } from '../src/Api/FormApi';
 import { allMessageApi, shoWAllConvApi } from '../src/Api/ChatUserApi';
 import { addChatUser } from '../src/Store/ChatUserSlice';
 import { addChatAdmin } from '../src/Store/ChatAdminSlice';
+import { addusers } from '../src/Store/UsersSlice';
 
 const Login = () => {
 
@@ -20,7 +21,7 @@ const Login = () => {
     async function login(e) {
         e.preventDefault();
 
-        if(email =='') return seterr('Enter the email');
+        if(email =='' || email.includes('@') == false) return seterr('Enter the email');
         if(password =='' || password.length < 8) return seterr('Enter a password greater than 8 numbers or letters');
 
         seterr('')
@@ -62,7 +63,14 @@ const Login = () => {
                         dispatch(addChatAdmin(responsee.data.data));
                         router.push('/')
                     })
-                    .catch( () => alert("حدث خطأ في الحصول على المحادثات الأدمن"));
+                    .catch( () => console.log("حدث خطأ في الحصول على المحادثات الأدمن"));
+
+                    ShowAllUsersApi(responsee.data.data.token)
+                    .then((res) => {
+                        dispatch(addusers(res.data.data));
+                    })
+                    .catch(() => console.log("حدث خطأ في جلب بيانات المستخدمين"));
+
                 }
             }
 

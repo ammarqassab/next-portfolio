@@ -9,11 +9,37 @@ const BodyChat = ({userId, scroll}) => {
     const chatUser = useSelector(state => state.chatUser.data);
     const [handlemodal, sethandlemodal] = React.useState(false)
     const [srcimg, setsrcimg] = React.useState(null)
+    const [imgsize, setimgsize] = React.useState('')
 
     function time(text) {
         const time = new Date(text);
         return ` ${time.getHours()}:${time.getMinutes()}`;
     }
+
+    React.useEffect(() => {
+        let elem = document.documentElement;
+
+        if (elem.requestFullscreen) {
+            elem.requestFullscreen().then(() => {}).catch(() => {});
+        } else if (elem.webkitRequestFullscreen) { /* Safari */
+            elem.webkitRequestFullscreen().then(() => {}).catch(() => {});
+        } else if (elem.msRequestFullscreen) { /* IE11 */
+            elem.msRequestFullscreen().then(() => {}).catch(() => {});
+        }
+
+        return () => {
+            if (document.exitFullscreen) {
+                document.exitFullscreen().then(() => {}).catch(() => {});
+            } else if (document.webkitExitFullscreen) { /* Safari */
+                document.webkitExitFullscreen().then(() => {}).catch(() => {});
+            } else if (document.msExitFullscreen) { /* IE11 */
+                document.msExitFullscreen().then(() => {}).catch(() => {});
+            }
+        };
+        
+    }, [])
+
+    const funimgsize = (sizeimg) => {setimgsize(sizeimg)}
 
     return (
         <div className=' height-con2 padding user-select'>
@@ -54,11 +80,16 @@ const BodyChat = ({userId, scroll}) => {
                 </div>
             </div>
             {handlemodal ?
-                <div className="modal" onClick={() => sethandlemodal(false)}>
+                <div className="modal">
+                    <div className='row center display-topmiddle flex-nowrap' style={{zIndex:'10000000000'}} >
+                        <button type="submit" className="btn round-large margin fas fa-minus bgc-1" onClick={() => funimgsize('')}></button>
+                        <button type="submit" className="btn round-large margin fas fa-times bgc-1" onClick={() => sethandlemodal(false)}></button>
+                        <button type="submit" className="btn round-large margin fas fa-plus bgc-1" onClick={() => funimgsize(' rotimg')}></button>
+                    </div>
                     <div className="modal-content">
-                        <span className='width-100'>
-                            <Image src={`/imageChat/${srcimg}`} width={`100%`} height={`50%`} layout="responsive" alt={srcimg} empty="true"/>
-                        </span>
+                        <div className={`width-100 responsive ${imgsize}`}>
+                            <Image src={`/imageChat/${srcimg}`} width="100%" height="100%" layout="responsive" objectFit='contain' alt={srcimg} empty="true"/>
+                        </div>
                     </div>
                 </div>
             :null

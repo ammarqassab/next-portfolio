@@ -8,11 +8,12 @@ import { addAuth, addMiddleware } from '../../Store/AuthSlice'
 import { showAllProjectsApi } from '../../Api/ProjectApi'
 import { addProject } from '../../Store/ProjectSlice'
 import Upscroll from '../Upscroll/Upscroll'
-import { appName, logoutuserApi, Middleware } from '../../Api/FormApi'
+import { appName, logoutuserApi, Middleware, ShowAllUsersApi } from '../../Api/FormApi'
 import { useRouter } from 'next/router';
 import { allMessageApi, shoWAllConvApi } from '../../Api/ChatUserApi'
 import { addChatUser } from '../../Store/ChatUserSlice'
 import { addChatAdmin } from '../../Store/ChatAdminSlice'
+import { addusers } from '../../Store/UsersSlice'
 
 const AppLayout = ({ children }) => {
 
@@ -30,6 +31,22 @@ const AppLayout = ({ children }) => {
         localStorage.clear();
         router.push('/');
     }
+
+    React.useEffect(() => {
+
+        if(localStorage.getItem("token")) {
+    
+            const token = localStorage.getItem("token");
+    
+            Middleware(token)
+            .then((res) => {
+                dispatch(addMiddleware(res.data.message));
+            })
+            .catch((err) => logout());
+    
+        }
+    
+    })
 
     React.useEffect(() => {
 
@@ -64,6 +81,13 @@ const AppLayout = ({ children }) => {
 
                 })
                 .catch( () => console.log("حدث خطأ في الحصول على المحادثات الأدمن"));
+
+                ShowAllUsersApi(token)
+                .then((res) => {
+                    dispatch(addusers(res.data.data));
+                })
+                .catch(() => console.log("حدث خطأ في جلب بيانات المستخدمين"));
+
             }
         }
 
@@ -74,22 +98,6 @@ const AppLayout = ({ children }) => {
         .catch((err) => console.error(err.message));
 
     },[])
-
-    React.useEffect(() => {
-
-    if(localStorage.getItem("token")) {
-
-        const token = localStorage.getItem("token");
-
-        Middleware(token)
-        .then((res) => {
-            dispatch(addMiddleware(res.data.message));
-        })
-        .catch((err) => logout());
-
-    }
-
-    })
 
     return (
         <div className=' display-container bgc-1 height-100vh'>

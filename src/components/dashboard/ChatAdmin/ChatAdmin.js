@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
 import Chat from '../../Chat/Chat';
+import Siderbar from '../Siderbar/Siderbar';
 import ListChatAdmin from './ListChatAdmin'
 
 const ChatAdmin = () => {
@@ -16,6 +17,8 @@ const ChatAdmin = () => {
     return (
         <div className=' animate-top'>
             {userId != null ? <Chat userId={userId} /> :null}
+
+            <Siderbar />
 
             <div className='transparent display-container padding bgc-1 textc-2 app-box-shadow' style={{margin:'100px 16px 16px'}} >
                 <h1 className='xxlarge'>Chat :<span className=' textc-4'> {chatAdmin !=null && chatAdmin.length > 0 ? chatAdmin.length :'0'}</span></h1>

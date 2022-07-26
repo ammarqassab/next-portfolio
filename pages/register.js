@@ -35,12 +35,12 @@ const Register = () => {
         e.preventDefault();
 
         if(username=='') return seterr('Enter the username');
-        if(email=='') return seterr('Enter the email');
+        if(email=='' || email.includes('@') == false) return seterr('Enter the email');
         if(password =='' || password.length < 8) return seterr('Enter a password greater than 8 numbers or letters');
         if(confirmPassword =='' || confirmPassword.length < 8) return seterr('Enter a confirmPassword greater than 8 numbers or letters');
         if(country=='') return seterr('Enter the country');
         if(city=='') return seterr('Enter the city');
-        if(phone=='') return seterr('Enter the phone');
+        if(phone=='' || isNaN(phone) == true) return seterr('Enter the phone');
 
         seterr('');
 
@@ -97,10 +97,10 @@ const Register = () => {
                         :
                         null
                         }
-                        <div className="col s100 padding" >
+                        <div className="col s100 padding left-align" >
                             <button type="submit" className="btn round-large display-inlineblock" style={{margin:'16px 16px 16px 0px'}} onClick={(e) => register(e)}>Register</button>
                             <Link href="/login">
-                                <a className="btn round-large display-inlineblock margin">
+                                <a className="btn round-large display-inlineblock">
                                     Already registered ?
                                 </a>
                             </Link>

@@ -43,7 +43,7 @@ const ListChatAdmin = ({handleid}) => {
                 dispatch(addChatAdmin(responsee.data.data));
                 numref=0;
             })
-            .catch( () => alert("حدث خطأ في الحصول على المحادثات الأدمن"));
+            .catch( () => console.log("حدث خطأ في الحصول على المحادثات الأدمن"));
         }
     }
 

@@ -34,7 +34,9 @@ const Siderbar = () => {
                         <div className="dropdown-click bar-item large padding-0 margin">
                             <div onClick={() => funhideshow()} className="fas fa-user-cog btn round-xlarge" style={{padding:'6px 16px'}} > {Auth && middleware=='Admin' ?Auth.username.toUpperCase():' admin'}<span className='arrow'></span></div>
                             <div className={`dropdown-content bar-block ${hideshow?' show':''}`}>
+                                <Link href={"/dashboard"} ><span className="fas fa-project-diagram bar-item btn margin-top round-xlarge bgc-1"> Projects</span></Link>
                                 <Link href={"/dashboard/chatadmin"} ><span className="fab fa-telegram-plane bar-item btn margin-top round-xlarge bgc-1"> Chat Admin</span></Link>
+                                <Link href={"/dashboard/users"} ><span className="fas fa-users bar-item btn margin-top round-xlarge bgc-1"> Users</span></Link>
                                 <Link href={"/"}><span className="fas fa-sign-out-alt bar-item btn margin-top round-xlarge bgc-1" onClick={() => logout()}> Logout</span></Link>
                             </div>
                         </div>

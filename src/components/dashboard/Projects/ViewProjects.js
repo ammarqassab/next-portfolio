@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Image from 'next/image';
+import { useRouter } from 'next/router'
 import { deleteProjectApi } from '../../../Api/ProjectApi';
 import { deleteProject } from '../../../Store/ProjectSlice';
 
@@ -9,6 +10,7 @@ const ViewProjects = ({handleeditToggle}) => {
     const auth = useSelector( (state) => state.auth.data);
     const Projects = useSelector(state => state.project.data);
     const dispatch = useDispatch();
+    const router = useRouter()
 
     const deleteproject = (id, index) => {
         deleteProjectApi(auth.token, id)
@@ -21,15 +23,17 @@ const ViewProjects = ({handleeditToggle}) => {
 
     const up = () => {window.scrollTo({top:0, behavior: 'smooth'})}
 
+    const prolink = (id) => {router.push(`/projects/${id}`)}
+
     return (
         <div className='animate-top padding'>
             <div className='app-box-shadow padding'>
                 <div className='row' >
                     {Projects != null && Projects.length > 0 ? Projects.map((iteme, index) => (
                         <div className='col l50' key={index}>
-                            <div className='row app-box-shadow hover-app-box-shadow pointer margin'>
+                            <div className='row app-box-shadow hover-app-box-shadow margin'>
                                 <div className='col m33 l50 display-container' style={{padding:"8px",minHeight:'200px'}} >
-                                    <div className=' display-middle width-100' >
+                                    <div className=' display-middle width-100 pointer'  onClick={() => prolink(iteme.id)}>
                                         {iteme.images.length > 0 ? <Image src={`/image/${iteme.images[0].path}`} width={`100%`} height={`50%`} layout="responsive" alt={iteme.name}  empty="true"/>:null}
                                     </div>
                                 </div>
