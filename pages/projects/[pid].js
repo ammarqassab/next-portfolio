@@ -124,9 +124,9 @@ const Projectid = () => {
             {handlemodal ?
                 <div className="modal">
                     <div className='row center display-topmiddle flex-nowrap' style={{zIndex:'10000000000'}} >
-                        <button type="submit" className="btn round-large margin fas fa-minus bgc-1" onClick={() => funimgsize('')}></button>
-                        <button type="submit" className="btn round-large margin fas fa-times bgc-1" onClick={() => sethandlemodal(false)}></button>
-                        <button type="submit" className="btn round-large margin fas fa-plus bgc-1" onClick={() => funimgsize(' rotimg')}></button>
+                        <button className="btn round-large margin fas fa-minus bgc-1" onClick={() => funimgsize('')}></button>
+                        <button className="btn round-large margin fas fa-times bgc-1" onClick={() => sethandlemodal(false)}></button>
+                        <button className="btn round-large margin fas fa-plus bgc-1" onClick={() => funimgsize(' rotimg')}></button>
                     </div>
                     <div className="modal-content">
                         <div className={`width-100 ${imgsize}`}>
