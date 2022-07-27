@@ -81,14 +81,14 @@ const BodyChat = ({userId, scroll}) => {
             </div>
             {handlemodal ?
                 <div className="modal">
-                    <div className='row center display-topmiddle flex-nowrap' style={{zIndex:'10000000000'}} >
+                    <div className='row flex-nowrap' style={{zIndex:'10000000000',justifyContent:'center'}} >
                         <button className="btn round-large margin fas fa-minus bgc-1" onClick={() => funimgsize('')}></button>
                         <button className="btn round-large margin fas fa-times bgc-1" onClick={() => sethandlemodal(false)}></button>
                         <button className="btn round-large margin fas fa-plus bgc-1" onClick={() => funimgsize(' rotimg')}></button>
                     </div>
                     <div className="modal-content">
                         <div className={`width-100 ${imgsize}`}>
-                            <Image src={`/imageChat/${srcimg}`} width="100%" height="100%" layout="responsive" objectFit='contain' alt={srcimg} empty="true"/>
+                            <Image src={`/imageChat/${srcimg}`} width="100%" height="50%" layout="responsive" objectFit='contain' alt={srcimg} empty="true"/>
                         </div>
                     </div>
                 </div>
