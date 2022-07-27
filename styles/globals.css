@@ -1103,6 +1103,7 @@ input:disabled {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  overflow: auto;
 }
 .modal-content img {
   object-fit:initial !important;
