@@ -7,6 +7,7 @@ const nextConfig = {
   },
   env: {
     appName: 'Larect',
+    appUrl: 'http://shopingammar.c1.biz',
     apiUrl: 'http://shopingammar.c1.biz/api',
   },
   // basePath:'/larect',

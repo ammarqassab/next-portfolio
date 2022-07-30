@@ -2,6 +2,7 @@ import axios from "axios";
 
 export const appName= process.env.appName;
 export const apiurl= process.env.apiUrl;
+export const appurl= process.env.appUrl;
 export const timeOut= 3000000;
 
 //touch .nojekyll

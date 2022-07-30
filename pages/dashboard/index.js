@@ -21,6 +21,7 @@ const dashboard = () => {
         <div className='height-con' >
             <Head>
                 <title>dashboard - {appName}</title>
+                <meta property="og:title" content={`dashboard - ${appName}`} />
             </Head>
             {Auth && middleware=='Admin' ?
                 <div>

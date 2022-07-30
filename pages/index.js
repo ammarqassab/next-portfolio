@@ -45,6 +45,8 @@ const Home = () => {
                 <meta name="keywords" content={`${appName}, App, Programming`}></meta>
                 <meta name="description" content={`${appName} : We are a company interested in programming and developing website and mobile applications`} />
                 <title>{appName}</title>
+                <meta property="og:description" content={`${appName} : We are a company interested in programming and developing website and mobile applications`} />
+                <meta property="og:title" content={appName} />
             </Head>
 
             <header>

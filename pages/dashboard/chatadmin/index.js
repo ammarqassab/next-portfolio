@@ -19,6 +19,7 @@ const chatadmin = () => {
         <div className='height-con'>
             <Head>
                 <title>chatadmin - {appName}</title>
+                <meta property="og:title" content={`chatadmin - ${appName}`} />
             </Head>
             {Auth && middleware=='Admin' ?
                 <ChatAdmin/>

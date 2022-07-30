@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import { useSelector } from 'react-redux'
 import Image from 'next/image'
 import Link from 'next/link'
-import { appName } from '../../src/Api/FormApi'
+import { appName, appurl } from '../../src/Api/FormApi'
 
 const Projectid = () => {
 
@@ -58,6 +58,8 @@ const Projectid = () => {
                 <meta name="keywords" content={`${namepro} - ${appName} , ${namepro} - App, ${namepro} - Programming`}></meta>
                 <meta name="description" content={`${namepro} - ${appName} : ${despro}`} />
                 <title>{namepro} - {appName}</title>
+                <meta property="og:description" content={`${namepro} - ${appName} : ${despro}`} />
+                <meta property="og:title" content={`${namepro} - ${appName}`} />
             </Head>
             <div className=' margin padding'>
                 <div className='app-box-shadow'>

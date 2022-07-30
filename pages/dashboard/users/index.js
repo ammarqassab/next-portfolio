@@ -45,6 +45,7 @@ const Users = () => {
         <div className='height-con animate-top'>
             <Head>
                 <title>Users - {appName}</title>
+                <meta property="og:title" content={`Users - ${appName}`} />
             </Head>
 
             {auth && middleware=='Admin' ?

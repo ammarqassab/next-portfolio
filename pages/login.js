@@ -85,6 +85,8 @@ const Login = () => {
                 <meta name="keywords" content={`Login to ${appName} , Login to App, Login to Programming`}></meta>
                 <meta name="description" content={`Login to ${appName} : We are a company interested in programming and developing website and mobile applications`} />
                 <title>Login to {appName}</title>
+                <meta property="og:description" content={`Login to ${appName} : We are a company interested in programming and developing website and mobile applications`} />
+                <meta property="og:title" content={`Login to ${appName}`} />
             </Head>
             <div className="container height-con"  style={{maxWidth:'1000px',margin:'5% auto'}} >
                 <div className=" margin padding app-box-shadow" >

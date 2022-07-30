@@ -1097,7 +1097,7 @@ input:disabled {
 .modal-content {
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 999999;
-  height: 90%;
+  height: 88%;
   position: relative;
   width: 96%;
   top: 44%;

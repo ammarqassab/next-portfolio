@@ -20,6 +20,7 @@ const chat = () => {
         <div className='height-con2' style={{marginBottom:'100px'}}  >
             <Head>
                 <title>chat - {appName}</title>
+                <meta property="og:title" content={`chat - ${appName}`} />
             </Head>
             {Auth && middleware=='User' ?
                 <Chat userId={Auth.id} />

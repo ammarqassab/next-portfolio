@@ -74,6 +74,8 @@ const Register = () => {
                 <meta name="keywords" content={`Register to ${appName} , Register to App, Register to Programming`}></meta>
                 <meta name="description" content={`Register to ${appName} : We are a company interested in programming and developing website and mobile applications`} />
                 <title>Register to {appName}</title>
+                <meta property="og:description" content={`Register to ${appName} : We are a company interested in programming and developing website and mobile applications`} />
+                <meta property="og:title" content={`Register to ${appName}`} />
             </Head>
             <div className="container height-con"  style={{maxWidth:'1000px',margin:'5% auto'}}>
                 <div className="margin padding app-box-shadow" >
