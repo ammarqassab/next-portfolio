@@ -2364,8 +2364,8 @@ div:hover.clip-path-card
 .mdx code {
   color: var(--textc-4) ;
   white-space: pre-wrap;
-  direction: ltr;
-  text-align: left;
+  direction: ltr !important;
+  text-align: left !important;
 }
 .mdx code::after {
   content: '`';
@@ -2379,14 +2379,14 @@ div:hover.clip-path-card
   padding: 20px;
   border-radius: 8px;
   overflow-x: auto;
-  direction: ltr;
-  text-align: left;
+  direction: ltr !important;
+  text-align: left !important;
 }
 .mdx pre code {
   color: var(--textc-2) ;
   width: 100%;
-  direction: ltr;
-  text-align: left;
+  direction: ltr !important;
+  text-align: left !important;
   white-space:pre;
 }
 .mdx pre code::after {
