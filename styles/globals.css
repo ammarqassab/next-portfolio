@@ -2391,11 +2391,11 @@ div:hover.clip-path-card
   content: '';
 }
 .mdx ul {
-  margin: 32px 16px;
+  margin: 32px 0;
   padding-left: 36px;
 }
 .mdx ol {
-  margin: 32px 16px;
+  margin: 32px 0;
   padding-left: 36px;
 }
 .mdx ol li {

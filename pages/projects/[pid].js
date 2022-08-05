@@ -72,6 +72,7 @@ const Projectid = () => {
             let parser = new DOMParser();
             let doc = parser.parseFromString(str, 'text/html');
             // console.log(doc.body)
+            document.getElementById("divDesc").innerHTML = null;
             document.getElementById("divDesc").append(doc.body);
         }
 
@@ -80,6 +81,7 @@ const Projectid = () => {
             let dom = document.createElement('div');
             dom.innerHTML = str;
             // console.log(dom)
+            document.getElementById("divDesc").innerHTML = null;
             document.getElementById("divDesc").append(dom);
         }
     
@@ -138,15 +140,15 @@ const Projectid = () => {
                                                 :null}
                                             </div> */}
                                         </div>
-                                        <div className='col s100 textc-2 margin padding' style={{padding:"8px"}}>
+                                        <div className='col s100 textc-2' style={{padding:"8px"}}>
                                             <div className='row' >
-                                                <div className='col s100 textc-4 xlarge margin-bottom' >
+                                                <div className='col s100 textc-4 xlarge margin-bottom padding' >
                                                     <span className=' border-bottom ' style={{paddingBottom:'6px'}}><span className=' textc-2'>{iteme.number} . </span>{iteme.name} :</span>
                                                 </div>
-                                                <div className='col s100 textc-4 large' >Type : <span className=' bgc-4 round-small textc-2 large' style={{padding:'1px 4px'}} >{iteme.type}</span></div>
-                                                <div id='divDesc' className='col s100 large mdx'></div>
-                                                <div className='col s100 margin-top' >
-                                                    <a href={`${iteme.link}`} target="_blank" rel="noopener noreferrer" className='fas fa-link btn round-large large text-decoration-none padding-small' style={{padding:"4px 8px"}}> Link</a>
+                                                <div className='col s100 textc-4 large padding' >Type : <span className=' bgc-4 round-small textc-2 large' style={{padding:'1px 4px'}} >{iteme.type}</span></div>
+                                                <div id='divDesc' className='col s100 mdx'></div>
+                                                <div className='col s100 margin-top padding' >
+                                                    <a href={`${iteme.link}`} target="_blank" rel="noopener noreferrer" className='fas fa-link btn round-large large text-decoration-none margin padding-small' style={{padding:"4px 8px"}}> Link</a>
                                                     <Link href={"/"} ><span className="fas fa-home bar-item btn margin round-large large padding-small"> Home</span></Link>
                                                 </div>
                                             </div>
