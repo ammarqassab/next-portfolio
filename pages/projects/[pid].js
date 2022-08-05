@@ -14,13 +14,15 @@ const Projectid = () => {
     const [handlemodal, sethandlemodal] = React.useState(false)
     const [srcimg, setsrcimg] = React.useState(null)
     const [imgsize, setimgsize] = React.useState('')
+    const [desdom, setdesdom] = React.useState(null)
     let namepro = '';
     let despro = '';
 
     for(let i in Projects) {
         if(Projects[i].id == pid) {
             namepro = Projects[i].name;
-            despro = Projects[i].description
+            despro = Projects[i].description;
+            break;
         }
     }
 
@@ -51,6 +53,41 @@ const Projectid = () => {
     }
 
     const funimgsize = (sizeimg) => {setimgsize(sizeimg)}
+
+    const support = () => {// check for DOMParser support
+        if (!window.DOMParser) return false;
+        let parser = new DOMParser();
+        try {
+            parser.parseFromString('x', 'text/html');
+        } catch(err) {
+            return false;
+        }
+        return true;
+    };
+
+    const textToHTML= React.useCallback((str) => {
+
+        // check for DOMParser support
+        if (support && desdom) {
+            let parser = new DOMParser();
+            let doc = parser.parseFromString(str, 'text/html');
+            // console.log(doc.body)
+            document.getElementById("divDesc").append(doc.body);
+        }
+
+        if (support == false && desdom) {
+            // Otherwise, create div and append HTML
+            let dom = document.createElement('div');
+            dom.innerHTML = str;
+            // console.log(dom)
+            document.getElementById("divDesc").append(dom);
+        }
+    
+    },[desdom]);
+
+    React.useEffect(() => {if(despro != '')setdesdom(despro)})
+
+    React.useEffect(() => {textToHTML(desdom)},[desdom])
     
     return (
         <div className=' height-con'>
@@ -107,7 +144,7 @@ const Projectid = () => {
                                                     <span className=' border-bottom ' style={{paddingBottom:'6px'}}><span className=' textc-2'>{iteme.number} . </span>{iteme.name} :</span>
                                                 </div>
                                                 <div className='col s100 textc-4 large' >Type : <span className=' bgc-4 round-small textc-2 large' style={{padding:'1px 4px'}} >{iteme.type}</span></div>
-                                                <div className='col s100 large' >{iteme.description}</div>
+                                                <div id='divDesc' className='col s100 large mdx'></div>
                                                 <div className='col s100 margin-top' >
                                                     <a href={`${iteme.link}`} target="_blank" rel="noopener noreferrer" className='fas fa-link btn round-large large text-decoration-none padding-small' style={{padding:"4px 8px"}}> Link</a>
                                                     <Link href={"/"} ><span className="fas fa-home bar-item btn margin round-large large padding-small"> Home</span></Link>

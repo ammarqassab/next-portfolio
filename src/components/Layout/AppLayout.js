@@ -8,7 +8,7 @@ import { addAuth, addMiddleware } from '../../Store/AuthSlice'
 import { showAllProjectsApi } from '../../Api/ProjectApi'
 import { addProject } from '../../Store/ProjectSlice'
 import Upscroll from '../Upscroll/Upscroll'
-import { appName, appurl, logoutuserApi, Middleware, ShowAllUsersApi } from '../../Api/FormApi'
+import { logoutuserApi, Middleware, ShowAllUsersApi } from '../../Api/FormApi'
 import { useRouter } from 'next/router';
 import { allMessageApi, shoWAllConvApi } from '../../Api/ChatUserApi'
 import { addChatUser } from '../../Store/ChatUserSlice'
@@ -102,16 +102,7 @@ const AppLayout = ({ children }) => {
     return (
         <div className=' display-container bgc-1 height-100vh'>
             <Head>
-                {/* <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests"/> */}
-                <meta charSet="utf-8" />
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-                <meta name="application-name" content={`${appName}`} />
-                <meta name="theme-color" content="#39c7da" />
-                <meta name="robots" content="follow, index" />
-                <meta property="og:url" content={appurl} />
-                <meta property="og:type" content={'project'} />
-                <meta property="og:site_name" content={appName} />
-                <link rel="icon" href="/favicon.ico" />
             </Head>
             <Header/>
             <Upscroll/>
