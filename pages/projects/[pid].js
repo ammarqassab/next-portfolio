@@ -146,7 +146,11 @@ const Projectid = () => {
                                                     <span className=' border-bottom ' style={{paddingBottom:'6px'}}><span className=' textc-2'>{iteme.number} . </span>{iteme.name} :</span>
                                                 </div>
                                                 <div className='col s100 textc-4 large padding' >Type : <span className=' bgc-4 round-small textc-2 large' style={{padding:'1px 4px'}} >{iteme.type}</span></div>
-                                                <div id='divDesc' className='col s100 mdx'></div>
+                                            </div>
+
+                                            <div id='divDesc' className='s100 mdx'></div>
+
+                                            <div className='row' >
                                                 <div className='col s100 margin-top padding' >
                                                     <a href={`${iteme.link}`} target="_blank" rel="noopener noreferrer" className='fas fa-link btn round-large large text-decoration-none margin padding-small' style={{padding:"4px 8px"}}> Link</a>
                                                     <Link href={"/"} ><span className="fas fa-home bar-item btn margin round-large large padding-small"> Home</span></Link>

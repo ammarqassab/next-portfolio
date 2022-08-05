@@ -784,6 +784,7 @@ input:disabled {
 }
 .rtl{
     direction: rtl !important;
+    text-align: right !important;
 }
 
 .col.s8 {
@@ -2324,6 +2325,7 @@ div:hover.clip-path-card
 .mdx{
   user-select: text;
   color: var(--textc-2);
+  text-align: left;
 }
 .mdx h1,.mdx h2,.mdx h3,.mdx h4,.mdx h5,.mdx h6 {
   margin: 32px 16px;
@@ -2363,6 +2365,7 @@ div:hover.clip-path-card
   color: var(--textc-4) ;
   white-space: pre-wrap;
   direction: ltr;
+  text-align: left;
 }
 .mdx code::after {
   content: '`';
@@ -2377,11 +2380,13 @@ div:hover.clip-path-card
   border-radius: 8px;
   overflow-x: auto;
   direction: ltr;
+  text-align: left;
 }
 .mdx pre code {
   color: var(--textc-2) ;
   width: 100%;
   direction: ltr;
+  text-align: left;
   white-space:pre;
 }
 .mdx pre code::after {
