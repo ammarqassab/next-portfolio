@@ -10,7 +10,7 @@ const blog = () => {
     // ,[]);
 
     return (
-        <div className="mdx">
+        <div className=" height-con mdx">
             blog
         </div>
     )
