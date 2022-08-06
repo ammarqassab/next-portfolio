@@ -11,7 +11,7 @@ const Custom500 = () => {
 
     return (
         <div className=' height-con display-container' >
-            <div className=' display-middle xlarge textc-2'>500 | Not Found</div>
+            <div className=' display-middle xlarge textc-2'>500 | Page not found</div>
         </div>
     );
 }

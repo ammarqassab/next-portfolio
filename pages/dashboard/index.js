@@ -4,18 +4,13 @@ import Head from 'next/head'
 import Siderbar from '../../src/components/dashboard/Siderbar/Siderbar';
 import Projects from '../../src/components/dashboard/Projects/Projects';
 import { useSelector } from 'react-redux';
-import { useRouter } from 'next/router';
 import { appName } from '../../src/Api/FormApi';
+import Custom404 from '../404';
 
 const dashboard = () => {
 
     const Auth = useSelector(state => state.auth.data)
     const middleware = useSelector(state => state.auth.middleware);
-    const router = useRouter();
-
-    React.useEffect(() => {
-        if(Auth ==null || middleware !='Admin') {router.push('/')}
-    },[])
 
     return (
         <div className='height-con' >
@@ -28,7 +23,7 @@ const dashboard = () => {
                     <Siderbar />
                     <Projects/>
                 </div>
-            :null
+            :<Custom404 />
             }
         </div>
     );

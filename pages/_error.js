@@ -17,7 +17,7 @@ function Error({ statusCode }) {
 
     return (
         <div className=' height-con display-container' >
-            <div className=' display-middle xlarge textc-2'>404 | Not Found :\ Error</div>
+            <div className=' display-middle xlarge textc-2'>404 | Page not found :\ Error</div>
         </div>
     )
 }

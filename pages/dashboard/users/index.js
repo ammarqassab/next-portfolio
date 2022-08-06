@@ -1,10 +1,10 @@
 import React from 'react';
 import Head from 'next/head'
 import { useDispatch, useSelector } from 'react-redux';
-import { useRouter } from 'next/router';
 import { appName, deleteUserApi } from '../../../src/Api/FormApi';
 import Siderbar from '../../../src/components/dashboard/Siderbar/Siderbar';
 import { deleteusers } from '../../../src/Store/UsersSlice';
+import Custom404 from '../../404';
 
 const Users = () => {
     
@@ -12,7 +12,6 @@ const Users = () => {
     const users = useSelector( (state) => state.users.data);
     const dispatch = useDispatch();
     const middleware = useSelector(state => state.auth.middleware);
-    const router = useRouter();
 
     const [title, settitle] = React.useState('');
 
@@ -36,10 +35,6 @@ const Users = () => {
         .catch(() => console.log("حدث خطأ في حذف المستخدم"));
         
     };
-
-    React.useEffect(() => {
-        if(auth ==null || middleware !='Admin') {router.push('/')}
-    },[])
 
     return (
         <div className='height-con animate-top'>
@@ -89,7 +84,7 @@ const Users = () => {
 
                 </div>
             </>
-            :null
+            :<Custom404 />
             }
 
         </div>
