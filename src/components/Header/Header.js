@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <header className=' row border-bottom borderc-4'>
         <div className=' col m66 text-decoration-none xxlarge sofia textc-4' style={{padding:'16px 32px'}} ><ApplicationLogo/></div>
-        {Auth !=null && Auth.username.length >0 ? <div className=' col m33 textc-4 center large pointer' style={{padding:"28px 0px"}} >{`${Auth.username.toUpperCase() || Auth.username}`}</div>:null}
+        {Auth !=null ? <div className=' col m33 textc-4 center large pointer' style={{padding:"28px 0px"}} >{`${Auth.username.toUpperCase() || Auth.username}`}</div>:null}
     </header>
   )
 }
